@@ -15,7 +15,7 @@ class ForceHttps
      */
     public function handle(Request $request, Closure $next): Response
     {
-
+        // Función creada para forzar el request seguro con el prefijo https
         if(!$request->secure()){
             return redirect()->secure($request->getRequestUri());
         }

@@ -12,6 +12,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        // Se utilizo la función ForceHttps del Middleware para agregar el Https desde la cabecera
         $middleware->append(ForceHttps::class);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
