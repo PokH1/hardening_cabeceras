@@ -4,7 +4,18 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Http\Request;
 
+
 Route::get('/', function () {
+    return view('security-demo-solution');
+});
+
+Route::get('/mime-sniffing-solucion', function () {
+    return view('mime_sniffing_solucion');
+})->name('mime.solucion');
+
+Route::get('/secure-cookie-solucion', function () {
+    return view('Secure_Cookie_solucion');
+})->name('cookie.solucion');
     return view('security-demo-solution');
 });
 
