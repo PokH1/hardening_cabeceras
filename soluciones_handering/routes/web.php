@@ -6,8 +6,12 @@ use Illuminate\Http\Request;
 
 
 Route::get('/', function () {
-    return view('security-demo-solution');
+    return view('welcome');
 });
+
+Route::get('/', function () {
+    return view('welcome');
+})->name('inicio');
 
 Route::get('/mime-sniffing-solucion', function () {
     return view('mime_sniffing_solucion');
@@ -16,16 +20,10 @@ Route::get('/mime-sniffing-solucion', function () {
 Route::get('/secure-cookie-solucion', function () {
     return view('Secure_Cookie_solucion');
 })->name('cookie.solucion');
-    return view('security-demo-solution');
-});
-
-Route::get('/csp', function () {
-    return view('csp-solution');
-});
 
 Route::get('/same-site', function () {
-    return view('same-site-solution');
-});
+    return view('same_site.same-site-solution');
+})->name('same-site.solucion');
 
 Route::post('/transfer', function () {
     $amount = request('amount', '0');
@@ -37,16 +35,14 @@ Route::post('/transfer', function () {
 
 
 Route::get('/hardening', function (Request $request) {
-
-    // ✅ Cookie protegida
     $cookie = cookie(
         'session_id',
         'SESSION123456',
-        60,        // minutos
+        60,        
         '/',
         null,
-        false,     // secure (true en HTTPS)
-        true,      // ✅ HttpOnly
+        false,     
+        true,      
         false,
         'Strict'
     );
@@ -75,4 +71,12 @@ Route::get('/http-only', function () {
     return response()
         ->view('http_only')
         ->cookie($cookie);
-});
+})->name('http-only');
+
+Route::get('/csp', function () {
+    $nonce = base64_encode(random_bytes(16));
+
+    return response()
+        ->view('csp-solution', compact('nonce'))
+        ->header("Content-Security-Policy", "script-src 'nonce-$nonce'");
+})->name('csp');

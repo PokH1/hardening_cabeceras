@@ -3,9 +3,9 @@
 setcookie("session_id", "SESSION123456", [
     "expires" => time() + 3600,
     "path" => "/",
-    "secure" => true,      // ⚠️ Cambiar a true si usas HTTPS
-    "httponly" => true,     // ✅ Protege contra robo por XSS
-    "samesite" => "Strict"  // ✅ Protección CSRF
+    "secure" => true,      
+    "httponly" => true,     
+    "samesite" => "Strict" 
 ]);
 
 // 🔐 Sanitización segura
@@ -108,6 +108,18 @@ if (isset($_GET['nombre'])) {
             color: #888;
         }
     </style>
+
+    <nav>
+    <div class="logo">🛡 Hardening Project</div>
+    <div>
+        <a href="{{ route('inicio') }}">Inicio</a>
+        <a href="{{ route('mime.solucion') }}">MIME Sniffing</a>
+        <a href="{{ route('cookie.solucion') }}">Secure Cookie</a>
+        <a href="{{ route('csp') }}">CSP</a>
+        <a href="{{ route('same-site.solucion') }}">SameSite</a>
+        <a href="{{ route('http-only') }}">HttpOnly</a>
+    </div>
+</nav>
 </head>
 <body>
 

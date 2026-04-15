@@ -99,9 +99,15 @@ button:hover{
 <body>
 
 <nav>
-    <a href="{{ route('inicio') }}">Inicio</a>
-    <a href="{{ route('mime.solucion') }}">Mime Sniffing - Solución</a>
-    <a href="{{ route('cookie.solucion') }}">Secure Cookie - Solución</a>
+    <div class="logo">🛡 Hardening Project</div>
+    <div>
+        <a href="{{ route('inicio') }}">Inicio</a>
+        <a href="{{ route('mime.solucion') }}">MIME Sniffing</a>
+        <a href="{{ route('cookie.solucion') }}">Secure Cookie</a>
+        <a href="{{ route('csp') }}">CSP</a>
+        <a href="{{ route('same-site.solucion') }}">SameSite</a>
+        <a href="{{ route('http-only') }}">HttpOnly</a>
+    </div>
 </nav>
 
 <div class="container">

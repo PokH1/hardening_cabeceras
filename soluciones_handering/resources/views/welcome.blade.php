@@ -136,6 +136,9 @@
         <a href="{{ route('inicio') }}">Inicio</a>
         <a href="{{ route('mime.solucion') }}">MIME Sniffing</a>
         <a href="{{ route('cookie.solucion') }}">Secure Cookie</a>
+        <a href="{{ route('csp') }}">CSP</a>
+        <a href="{{ route('same-site.solucion') }}">SameSite</a>
+        <a href="{{ route('http-only') }}">HttpOnly</a>
     </div>
 </nav>
 
@@ -169,13 +172,6 @@
         </p>
     </div>
 
-    <div class="feature-card">
-        <h3>🚀 Laravel</h3>
-        <p>
-            Aplicación desarrollada en Laravel implementando buenas prácticas
-            modernas de seguridad en aplicaciones web.
-        </p>
-    </div>
 </section>
 
 </body>
