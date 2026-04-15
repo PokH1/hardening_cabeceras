@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\ForceHttps;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -12,6 +13,8 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        // Se utilizo la función ForceHttps del Middleware para agregar el Https desde la cabecera
+        $middleware->append(ForceHttps::class);
         $middleware->append(PreventClickjacking::class);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
