@@ -67,6 +67,8 @@ cd soluciones_handering
 
 2-instala dependencias:
 
+composer install
+
 npm i
 
 3-inicia el proyecto:
