@@ -28,6 +28,8 @@
             <li><a href="../http_only/http_only_vulnerable.php">HttpOnly</a></li>
             <li><a href="../permission_policy/permission_policy_vulnerable.php">Permissions Policy</a></li>
             <li><a href="../same_site/">SameSite</a></li>
+            <li><a href="../secure_cookie/Secure_Cookie.php">SecureCookie</a></li>
+            <li><a href="../mime_sniffing/mime_sniffing.php">MIMESniffing</a></li>
         </ul>
     </nav>
     <h2>Haz clic para ganar un premio</h2>
