@@ -79,6 +79,17 @@ Route::get('/http-only', function () {
         ->cookie($cookie);
 });
 
+Route::get('/victima', function () {
+    return view('victima');
+});
+
+Route::post('/transferir', function () {
+    return view('exito');
+});
+
+Route::get('/atacante', function () {
+    return view('atacante');
+});
 
 Route::get('/permission-policy', function (Request $request) {
 
