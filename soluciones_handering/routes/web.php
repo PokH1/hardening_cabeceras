@@ -40,15 +40,14 @@ Route::post('/transfer', function () {
 
 Route::get('/hardening', function (Request $request) {
 
-    // ✅ Cookie protegida
     $cookie = cookie(
         'session_id',
         'SESSION123456',
-        60,        // minutos
+        60,       
         '/',
         null,
-        false,     // secure (true en HTTPS)
-        true,      // ✅ HttpOnly
+        false,     
+        true,      
         false,
         'Strict'
     );
@@ -77,7 +76,7 @@ Route::get('/http-only', function () {
     return response()
         ->view('http_only')
         ->cookie($cookie);
-});
+})->name('http-only');
 
 Route::get('/victima', function () {
     return view('victima');
@@ -89,22 +88,20 @@ Route::post('/transferir', function () {
 
 Route::get('/atacante', function () {
     return view('atacante');
-});
+})->name('atacante');
 
 Route::get('/permission-policy', function (Request $request) {
 
-    // Generar la vista como Response
     $response = response()->view('permission_policy');
 
-    // Agregar la cabecera segura
     $response->headers->set(
         'Permissions-Policy',
         'geolocation=(), camera=(), microphone=(), payment=(), fullscreen=(self)'
     );
 
     return $response;
-});
-})->name('http-only');
+})->name('permission-policy');
+
 
 Route::get('/csp', function () {
     $nonce = base64_encode(random_bytes(16));
