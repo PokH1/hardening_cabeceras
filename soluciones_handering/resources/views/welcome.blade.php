@@ -139,6 +139,8 @@
         <a href="{{ route('csp') }}">CSP</a>
         <a href="{{ route('same-site.solucion') }}">SameSite</a>
         <a href="{{ route('http-only') }}">HttpOnly</a>
+        <a href="{{ route('permission-policy') }}">Permissions Policy</a>
+        <a href="{{ route('atacante') }}">Atacante</a>
     </div>
 </nav>
 

