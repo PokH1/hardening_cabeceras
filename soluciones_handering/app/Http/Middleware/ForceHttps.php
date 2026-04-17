@@ -13,13 +13,13 @@ class ForceHttps
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
-    {
-        // Función creada para forzar el request seguro con el prefijo https
-        if(!$request->secure()){
-            return redirect()->secure($request->getRequestUri());
-        }
+    // public function handle(Request $request, Closure $next): Response
+    // {
+    //     // Función creada para forzar el request seguro con el prefijo https
+    //     // if(!$request->secure()){
+    //     //     return redirect()->secure($request->getRequestUri());
+    //     // }
 
-        return $next($request);
-    }
+    //     // return $next($request);
+    // }
 }

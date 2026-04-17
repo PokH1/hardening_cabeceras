@@ -14,7 +14,7 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         // Se utilizo la función ForceHttps del Middleware para agregar el Https desde la cabecera
-        $middleware->append(ForceHttps::class);
+        // $middleware->append(ForceHttps::class);
         $middleware->append(PreventClickjacking::class);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
